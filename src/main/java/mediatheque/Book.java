@@ -1,6 +1,4 @@
-
 package mediatheque;
-
 
 public class Book extends Item {
 	private String author;
@@ -16,7 +14,7 @@ public class Book extends Item {
 
 	public void setAuthor(String author) {
 		this.author = author;
-	}	
+	}
 
 	public void print() {
 		System.out.println(this);
@@ -24,8 +22,14 @@ public class Book extends Item {
 
 	@Override
 	public String toString() {
-		return "Book{" + super.toString() + ", author=" + author + '}';
+		return "Livre {" + super.toString() + ", auteur : " + author + '}';
 	}
-	
-	
+
+	/*
+	 Method accept() for pattern visitor
+	 */
+	@Override
+	public void accept(ItemVisitor visitor) {
+		visitor.visit(this);
+	}
 }

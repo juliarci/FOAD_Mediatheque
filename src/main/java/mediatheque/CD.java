@@ -22,7 +22,14 @@ public class CD extends Item {
 
 	@Override
 	public String toString() {
-		return "CD{" + super.toString() + ",numberOfTracks=" + numberOfTracks + '}';
+		return "CD {" + super.toString() + ", nombreDePiste : " + numberOfTracks + '}';
 	}
-	
+
+	/*
+	Method accept() for pattern visitor
+	 */
+	@Override
+	public void accept(ItemVisitor visitor) {
+		visitor.visit(this);
+	}
 }
